@@ -22,7 +22,7 @@ class BungieApi {
 
 		let request = NSMutableURLRequest(url: BungieUrls.GetAccessTokens)
 		request.httpMethod = "POST"
-		request.setValue("1ce5d114f16a4ed2966d000729e7a7fb", forHTTPHeaderField: "X-API-Key")
+		request.setValue(apiKey, forHTTPHeaderField: "X-API-Key")
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.setValue("\(json.count)", forHTTPHeaderField: "Content-Length")
 		request.httpBody = json
