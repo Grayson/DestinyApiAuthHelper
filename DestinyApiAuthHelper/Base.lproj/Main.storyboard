@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="DestinyApiAuthHelper" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -662,7 +664,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="DestinyApiAuthHelper" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="com.fromconcentratesoftware.destinyapiauthhelper.mainwin" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -679,15 +681,263 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="DestinyApiAuthHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="371" height="293"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-kw-PUQ">
+                                <rect key="frame" x="107" y="248" width="244" height="32"/>
+                                <buttonCell key="cell" type="bevel" title="https://www.bungie.net/en/Application/" bezelStyle="rounded" alignment="left" imageScaling="proportionallyDown" inset="2" id="LpK-1X-pba">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openApplicationPage:" target="XfG-lQ-9wD" id="qBw-BU-41M"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Th-SD-U7q">
+                                <rect key="frame" x="188" y="169" width="163" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="aHB-7c-g2N">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ti2-xT-seV">
+                                <rect key="frame" x="60" y="172" width="122" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Locate the API Key:" id="SwI-BJ-cDK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lMZ-SL-Wdx">
+                                <rect key="frame" x="60" y="129" width="226" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Go to your unique Authorization URL" id="lhH-nF-quG">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UAH-LT-b2L">
+                                <rect key="frame" x="224" y="213" width="121" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="destinyauth://token" id="GFH-i5-f2n">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zad-3B-NBG">
+                                <rect key="frame" x="60" y="213" width="160" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enter into &quot;Redirect URL&quot;:" id="782-pM-Ihy">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Gm-ft-lEa">
+                                <rect key="frame" x="60" y="256" width="41" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Go to:" id="GlD-b3-NvV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="jVH-h3-goL" customClass="StepView" customModule="DestinyApiAuthHelper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="247" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="Hb7-l3-bZC"/>
+                                    <constraint firstAttribute="height" constant="34" id="lGJ-A7-0fs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.79663254309999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rts-dR-L7b" customClass="StepView" customModule="DestinyApiAuthHelper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="205" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6Uj-iU-0Xt"/>
+                                    <constraint firstAttribute="width" constant="34" id="ox6-kz-cHh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="2"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.79663254309999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="owM-cy-K8S" customClass="StepView" customModule="DestinyApiAuthHelper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="163" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="llp-R0-7Kl"/>
+                                    <constraint firstAttribute="width" constant="34" id="pIA-gx-P27"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="3"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.79663254309999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="K5F-cO-kFR" customClass="StepView" customModule="DestinyApiAuthHelper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="121" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="KVa-6n-Tdd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="f9g-MM-rQf"/>
+                                    <constraint firstAttribute="height" constant="34" id="ice-WR-fW0"/>
+                                    <constraint firstAttribute="width" constant="34" id="nho-3Q-gZ8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="4"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.79663254309999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="HLD-qn-2nm" customClass="StepView" customModule="DestinyApiAuthHelper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="79" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="3cn-8b-UhR"/>
+                                    <constraint firstAttribute="height" constant="34" id="RKL-dp-230"/>
+                                    <constraint firstAttribute="width" constant="34" id="jmH-Zh-MGS"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="yqJ-H3-QGN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="5"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleBackgroundColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.79663254309999998" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I1J-N0-KUX">
+                                <rect key="frame" x="60" y="87" width="112" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Approve your app" id="LU5-sk-SSi">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mUm-xn-sER">
+                                <rect key="frame" x="60" y="22" width="55" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Refresh:" id="9yg-Xk-cpN">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="RAr-jH-RB1">
+                                <rect key="frame" x="121" y="52" width="230" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="uE2-DH-zvF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-3H-Koe">
+                                <rect key="frame" x="121" y="20" width="230" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="iaQ-hL-5W7">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ohf-r0-C5u">
+                                <rect key="frame" x="60" y="54" width="55" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Auth:" id="N8p-vR-Wcm">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ti2-xT-seV" firstAttribute="leading" secondItem="owM-cy-K8S" secondAttribute="trailing" constant="8" id="0vb-Aw-JMp"/>
+                            <constraint firstItem="zad-3B-NBG" firstAttribute="centerY" secondItem="Rts-dR-L7b" secondAttribute="centerY" id="26T-7e-MLl"/>
+                            <constraint firstAttribute="trailing" secondItem="4Th-SD-U7q" secondAttribute="trailing" constant="20" id="2Ky-8z-0q2"/>
+                            <constraint firstItem="8Gm-ft-lEa" firstAttribute="centerY" secondItem="jVH-h3-goL" secondAttribute="centerY" id="328-b6-8yQ"/>
+                            <constraint firstItem="lMZ-SL-Wdx" firstAttribute="centerY" secondItem="K5F-cO-kFR" secondAttribute="centerY" id="3N4-5f-UhJ"/>
+                            <constraint firstItem="Rts-dR-L7b" firstAttribute="top" secondItem="jVH-h3-goL" secondAttribute="bottom" constant="8" id="3QV-83-9TI"/>
+                            <constraint firstItem="mUm-xn-sER" firstAttribute="top" secondItem="ohf-r0-C5u" secondAttribute="bottom" constant="15" id="4J3-ys-nKz"/>
+                            <constraint firstItem="jVH-h3-goL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="12" id="4Jp-LJ-yqY"/>
+                            <constraint firstItem="4Th-SD-U7q" firstAttribute="leading" secondItem="ti2-xT-seV" secondAttribute="trailing" constant="8" id="4qi-Ps-I2y"/>
+                            <constraint firstItem="Pze-3H-Koe" firstAttribute="width" secondItem="RAr-jH-RB1" secondAttribute="width" id="54f-su-Enl"/>
+                            <constraint firstItem="Pze-3H-Koe" firstAttribute="trailing" secondItem="RAr-jH-RB1" secondAttribute="trailing" id="5xT-8E-vuK"/>
+                            <constraint firstItem="ohf-r0-C5u" firstAttribute="leading" secondItem="I1J-N0-KUX" secondAttribute="leading" id="832-eS-f0c"/>
+                            <constraint firstItem="lMZ-SL-Wdx" firstAttribute="leading" secondItem="K5F-cO-kFR" secondAttribute="trailing" constant="8" id="8hx-2J-1Az"/>
+                            <constraint firstItem="K5F-cO-kFR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="9O8-gu-Kdu"/>
+                            <constraint firstItem="UAH-LT-b2L" firstAttribute="leading" secondItem="zad-3B-NBG" secondAttribute="trailing" constant="8" id="CdL-Dt-eWo"/>
+                            <constraint firstItem="4Th-SD-U7q" firstAttribute="trailing" secondItem="3ah-kw-PUQ" secondAttribute="trailing" id="Frd-ay-GON"/>
+                            <constraint firstItem="zad-3B-NBG" firstAttribute="leading" secondItem="Rts-dR-L7b" secondAttribute="trailing" constant="8" id="H59-Ff-S9N"/>
+                            <constraint firstAttribute="bottom" secondItem="mUm-xn-sER" secondAttribute="bottom" constant="22" id="I5e-jq-stn"/>
+                            <constraint firstItem="ti2-xT-seV" firstAttribute="leading" secondItem="owM-cy-K8S" secondAttribute="trailing" constant="8" id="Ie6-cN-TB7"/>
+                            <constraint firstItem="RAr-jH-RB1" firstAttribute="centerY" secondItem="ohf-r0-C5u" secondAttribute="centerY" id="JZ3-EG-IV7"/>
+                            <constraint firstItem="UAH-LT-b2L" firstAttribute="centerY" secondItem="Rts-dR-L7b" secondAttribute="centerY" id="PG5-Z8-rZL"/>
+                            <constraint firstItem="HLD-qn-2nm" firstAttribute="top" secondItem="K5F-cO-kFR" secondAttribute="bottom" constant="8" id="QFm-8D-y7z"/>
+                            <constraint firstItem="mUm-xn-sER" firstAttribute="width" secondItem="ohf-r0-C5u" secondAttribute="width" id="TrX-bf-JDs"/>
+                            <constraint firstItem="mUm-xn-sER" firstAttribute="leading" secondItem="I1J-N0-KUX" secondAttribute="leading" id="Uqe-iC-Bk3"/>
+                            <constraint firstItem="jVH-h3-goL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Vzz-HK-Nwk"/>
+                            <constraint firstItem="3ah-kw-PUQ" firstAttribute="centerY" secondItem="jVH-h3-goL" secondAttribute="centerY" id="W0P-ec-ya2"/>
+                            <constraint firstItem="4Th-SD-U7q" firstAttribute="centerY" secondItem="owM-cy-K8S" secondAttribute="centerY" id="WkF-3n-VUg"/>
+                            <constraint firstItem="I1J-N0-KUX" firstAttribute="centerY" secondItem="HLD-qn-2nm" secondAttribute="centerY" id="YRd-Fg-YJJ"/>
+                            <constraint firstItem="ti2-xT-seV" firstAttribute="centerY" secondItem="owM-cy-K8S" secondAttribute="centerY" id="Z74-vW-cGL"/>
+                            <constraint firstItem="I1J-N0-KUX" firstAttribute="leading" secondItem="HLD-qn-2nm" secondAttribute="trailing" constant="8" id="ZjN-rE-Bjk"/>
+                            <constraint firstItem="ohf-r0-C5u" firstAttribute="top" secondItem="I1J-N0-KUX" secondAttribute="bottom" constant="16" id="axW-fw-Yt9"/>
+                            <constraint firstItem="owM-cy-K8S" firstAttribute="top" secondItem="Rts-dR-L7b" secondAttribute="bottom" constant="8" id="cWy-01-Fow"/>
+                            <constraint firstItem="Pze-3H-Koe" firstAttribute="centerY" secondItem="mUm-xn-sER" secondAttribute="centerY" id="cwb-OJ-jzW"/>
+                            <constraint firstItem="8Gm-ft-lEa" firstAttribute="leading" secondItem="jVH-h3-goL" secondAttribute="trailing" constant="8" id="dFt-9L-UcG"/>
+                            <constraint firstItem="zad-3B-NBG" firstAttribute="leading" secondItem="Rts-dR-L7b" secondAttribute="trailing" constant="8" id="ipG-8D-4jb"/>
+                            <constraint firstItem="Rts-dR-L7b" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="kBh-pJ-Akn"/>
+                            <constraint firstItem="K5F-cO-kFR" firstAttribute="top" secondItem="owM-cy-K8S" secondAttribute="bottom" constant="8" id="lSq-u8-Y8H"/>
+                            <constraint firstItem="8Gm-ft-lEa" firstAttribute="leading" secondItem="jVH-h3-goL" secondAttribute="trailing" constant="8" id="lsU-W7-Pab"/>
+                            <constraint firstItem="HLD-qn-2nm" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="oCd-kd-pi7"/>
+                            <constraint firstItem="RAr-jH-RB1" firstAttribute="leading" secondItem="ohf-r0-C5u" secondAttribute="trailing" constant="8" id="or9-HA-lqw"/>
+                            <constraint firstItem="3ah-kw-PUQ" firstAttribute="leading" secondItem="8Gm-ft-lEa" secondAttribute="trailing" constant="8" id="pUQ-Rp-8MI"/>
+                            <constraint firstAttribute="trailing" secondItem="RAr-jH-RB1" secondAttribute="trailing" constant="20" id="x9e-qp-4l9"/>
+                            <constraint firstItem="owM-cy-K8S" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ya6-Re-K01"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="apiKeyTextField" destination="4Th-SD-U7q" id="hJm-C8-ShE"/>
+                        <outlet property="authTokenField" destination="RAr-jH-RB1" id="XLc-fw-sxm"/>
+                        <outlet property="refreshTokenField" destination="Pze-3H-Koe" id="wIO-7J-naj"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="20.5" y="666.5"/>
         </scene>
     </scenes>
 </document>

@@ -11,6 +11,10 @@
 		1D6568831E27130100BDA934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6568821E27130100BDA934 /* ViewController.swift */; };
 		1D6568851E27130100BDA934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6568841E27130100BDA934 /* Assets.xcassets */; };
 		1D6568881E27130100BDA934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6568861E27130100BDA934 /* Main.storyboard */; };
+		1D6568901E27136D00BDA934 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D65688F1E27136D00BDA934 /* URLHandler.swift */; };
+		1D6568921E271B9B00BDA934 /* TokenDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6568911E271B9B00BDA934 /* TokenDto.swift */; };
+		1D6568941E271C3A00BDA934 /* BungieApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6568931E271C3A00BDA934 /* BungieApi.swift */; };
+		1D6568961E27B28500BDA934 /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6568951E27B28500BDA934 /* StepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		1D6568841E27130100BDA934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D6568871E27130100BDA934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D6568891E27130100BDA934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D65688F1E27136D00BDA934 /* URLHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
+		1D6568911E271B9B00BDA934 /* TokenDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDto.swift; sourceTree = "<group>"; };
+		1D6568931E271C3A00BDA934 /* BungieApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BungieApi.swift; sourceTree = "<group>"; };
+		1D6568951E27B28500BDA934 /* StepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				1D6568841E27130100BDA934 /* Assets.xcassets */,
 				1D6568861E27130100BDA934 /* Main.storyboard */,
 				1D6568891E27130100BDA934 /* Info.plist */,
+				1D65688F1E27136D00BDA934 /* URLHandler.swift */,
+				1D6568911E271B9B00BDA934 /* TokenDto.swift */,
+				1D6568931E271C3A00BDA934 /* BungieApi.swift */,
+				1D6568951E27B28500BDA934 /* StepView.swift */,
 			);
 			path = DestinyApiAuthHelper;
 			sourceTree = "<group>";
@@ -134,7 +146,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D6568831E27130100BDA934 /* ViewController.swift in Sources */,
+				1D6568941E271C3A00BDA934 /* BungieApi.swift in Sources */,
+				1D6568961E27B28500BDA934 /* StepView.swift in Sources */,
+				1D6568921E271B9B00BDA934 /* TokenDto.swift in Sources */,
 				1D6568811E27130100BDA934 /* AppDelegate.swift in Sources */,
+				1D6568901E27136D00BDA934 /* URLHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
