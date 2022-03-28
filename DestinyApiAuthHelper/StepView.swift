@@ -29,9 +29,9 @@ class StepView : NSView {
 		circle.stroke()
 
 		let font = NSFont.systemFont(ofSize: CGFloat(textSize))
-		let attributes: [String : Any] = [
-			NSForegroundColorAttributeName: textColor,
-			NSFontAttributeName: font
+        let attributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: textColor,
+            NSAttributedString.Key.font: font
 		]
 		let attributedString = NSAttributedString(string: text, attributes: attributes)
 		let stringSize = attributedString.size()

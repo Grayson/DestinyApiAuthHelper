@@ -48,7 +48,7 @@ class ViewController: NSViewController {
 	}
 
 	@IBAction func openApplicationPage(_ sender: Any) {
-		NSWorkspace.shared().open(URL(string: "https://www.bungie.net/en/Application/")!)
+        NSWorkspace.shared.open(URL(string: "https://www.bungie.net/en/Application/")!)
 	}
 
 	override func viewDidLoad() {
