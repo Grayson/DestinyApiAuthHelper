@@ -112,10 +112,9 @@
 			};
 			buildConfigurationList = 1D6568781E27130000BDA934 /* Build configuration list for PBXProject "DestinyApiAuthHelper" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
