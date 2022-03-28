@@ -57,30 +57,34 @@ class ViewController: NSViewController {
 		URLHandler.singleton.onCodeReceived = { [weak self] code in
 			guard let apiKey = self?.apiKeyTextField?.stringValue else { return }
 			BungieApi.shared.fetchAccessTokens(apiKey: apiKey, code: code) { (accessToken, refreshToken) in
-				self?.representedObject = ViewModel(
-					accessTokenValue: accessToken.value,
-					accessTokenExpiration: convertToDate(accessToken.expires),
-					accessTokenReady: convertToDate(accessToken.readyin),
-					refreshTokenValue: refreshToken.value,
-					refreshTokenExpiration: convertToDate(refreshToken.expires),
-					refreshTokenReady: convertToDate(refreshToken.expires)
-				)
+                let vm = ViewModel(
+                    accessTokenValue: accessToken.value,
+                    accessTokenExpiration: convertToDate(accessToken.expires),
+                    accessTokenReady: convertToDate(accessToken.readyin),
+                    refreshTokenValue: refreshToken.value,
+                    refreshTokenExpiration: convertToDate(refreshToken.expires),
+                    refreshTokenReady: convertToDate(refreshToken.expires)
+                )
+                DispatchQueue.main.async {
+                    self?.representedObject = vm
+                }
 			}
 		}
 	}
 
 	override var representedObject: Any? {
 		didSet {
-			guard
-				let vm = representedObject as? ViewModel,
-				let authTokenField = authTokenField,
-				let refreshTokenField = refreshTokenField
-			else { return }
+            DispatchQueue.main.async { [self] in
+                guard
+                    let vm = representedObject as? ViewModel,
+                    let authTokenField = authTokenField,
+                    let refreshTokenField = refreshTokenField
+                else { return }
 
-			authTokenField.stringValue = vm.accessTokenValue
-			refreshTokenField.stringValue = vm.refreshTokenValue
+                authTokenField.stringValue = vm.accessTokenValue
+                refreshTokenField.stringValue = vm.refreshTokenValue
+            }
 		}
 	}
-
 }
 
